@@ -33,14 +33,16 @@
 			text-align: center;
 			background-color: #337ab7;
 			color:#fff;
-			border: solid 1px; 
-			border-radius: 5px 5px 0px 0px;
+			border-style: solid;
+			border-width: 2px 2px 1px 2px; 
+			border-radius: 15px 15px 0px 0px;
 			border-color: #000;
 		}
 		.scroll-menu {
 			width: 100%;
-			border: solid 1px;
-			border-radius: 0px 0px 5px 5px; 
+			border-style: solid;
+			border-width: 1px 2px 2px 2px;
+			border-radius: 0px 0px 15px 15px; 
 		}
 		.scroll-list {
 			width: 100%;
@@ -75,13 +77,60 @@
 		}
 		.titleleft {
 			width: 70%;
-			text-align: center;
+			text-align: right;
+			padding-right: 10px;
 		}
 
 		.titleright {
 			width: 30%;
-			text-align: center;
+			text-align: right;
+			padding-right: 10px;
 		}
+		</style>
+		<style>
+		.wrap .header {
+			width: 95%;
+            margin: 0 auto;
+        }
+        .logo {
+            width: 100%;
+            float: left;
+        }
+        .menu {
+        	width: 100%;
+        	float: left;
+        	padding-left: 200px;
+        	padding-top: 10px;
+        }
+        #main, #sidebar {
+            width: 100%;
+            float: left;
+            padding: 20px;
+        }
+        @media only screen and (min-width: 1024px) {
+            .wrap .header {
+                width: 100%;
+                margin: 0 auto;
+            }
+            #main {
+                width: 70%;
+                float: left;
+            }
+            #sidebar {
+                width: 30%;
+                float: left;
+            }
+            .logo {
+                width: 40%;
+                float: left;
+            }
+            .menu {
+                width: 60%;
+                float: left;
+                padding-top: 25px;
+                padding-left: 50px;
+            }
+        }        	
 		</style>
 		<style type="text/css">
 			body{
@@ -144,18 +193,18 @@
 
 	<body class="publications">
 		<header class="navbar navbar-static-top navbar-default">
-        	<div class="container"> 
-				<div>
+        	<div class="container header"  align="center"> 
+				<div class="logo" align="center">
 					<a href="index.html"></a>
-					<img style="display:block; padding-left:250px; vertical-align:center; line-height:1; margin:0; height: 100px;" align="left" src="img/logo.png" alt="Software Evolution and Analytics Group" hspace="0">
+					<img style="height: 100px;" src="img/logo.png" alt="Software Evolution and Analytics Group" hspace="0">
 				</div>
-		        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		            <ul class="nav navbar-nav navbar-right"style="display: inline-block;float:right;padding-top: 25px;padding-right:150px">
+		        <div class="menu">
+		            <ul class="nav navbar-nav navbar-right">
 		                <li><a href="index.html">Home</a></li>
 						<li><a href="member-current.html">People</a></li>
 		                <li class="active"><a href="publications.html">Publications<span class="sr-only">(current)</span></a></li>
 		                <li><a href="sponsors.html">Sponsors</a></li>
-		                <li><a href="contact.html">Contact</a></li>
+		                <li><a href="contact.html">Contact</a></li> 
 		            </ul>	          
 		        </div>
 			</div>			
@@ -164,160 +213,125 @@
 			<section id="about-us">
 				<div class="InfoContainer">
 					<div class="container">
-						<div class="row">
-							<table style="height:100%;width:100%;margin:0;padding:0;" align="left" cellpadding="0" cellspacing="0">
-								<tbody>
-									<tr>
-										<td width="70%" valign="top">
-											<div class="content">
-												<h2><b>Publications:</b></h2>
-										    	<br>
-											    <table id="general-search-table" style="height:100%;width:100%;margin:0;padding:0;">
-											    	<tbody>
-											    		<tr>
-											    			<td>
-																
-															   <div class="search">
-															      <input id="search-key" type="text" class="searchTerm" placeholder="Search for publications...">
-															      <button id="submit" type="submit" class="searchButton">GO</button>
-															   </div>
-
-																
-											    			</td>
-
-											    		</tr>
-											    		<tr>
-											    			<td>
-											    				<label><a class="hyperlink" href="https://dblp.uni-trier.de/pers/hd/z/Zou_0001:Ying" target="_blank">Link to DBLP</a></label>
-											    				&nbsp;&nbsp;&nbsp;
-											    				<label><a class="hyperlink" href="https://scholar.google.ca/citations?user=pCYlknMAAAAJ&hl=en" target="_blank">Link to Google Scholar</a></label>
-											    			</td>
-											    		</tr>
-											    		<tr><td><br/></td></tr>
-											    		<tr>
-											    			<td>
-											    				<div id="topic-hints"></div>
-											    			</td>
-											    		</tr>
-											    		<tr><td><br/></td></tr>
-											    		<tr>
-											    			<td width="100%">
-											    				<table id="filter-table" class="table-borderless" width="100%" style="text-align: left">
-																	<tbody>
-																		<tr>
-																			<td style="padding-left: 20px"><b>Authors: </b></td>
-																			<td id="filter-menu-th1" style="padding-left: 0px"></td>
-																			<td style="padding-left: 10px"><b>Venues: </b></td>
-																			<td id="filter-menu-th2" style="padding-left: 0px"></td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<br/>
-																			</td>
-																			<td>
-																				<br/>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td style="padding-left: 20px"><b>Years: </b></td>
-																			<td id="filter-menu-th3" style="padding-left: 0px"></td>
-																			<td style="padding-left: 10px"><b>Sub-topics: </b></td>
-																			<td id="filter-menu-th4" style="padding-left: 0px"></td>
-																		</tr>
-																	<tbody>
-																</table>	
-											    			</td>
-											    		</tr>
-											    		<tr><td><br/><br/></td></tr>
-											    		<tr>
-											    			<td>
-											    				<label><i id="search-result"></i></label>
-											    			</td>
-											    		</tr>
-											    		
-											    	</tbody>
-											    </table> 
-											</div>
-											<hr size="1" noshade>
-
-											<div id="full-list" class="content">
-											</div> 
-										</td>
-										<td valign="top" width = "30%" style="padding-left: 20px">
-											<table id="sidebar" width = "100%">
-												<tbody>
-													<tr>
-														<td>
-															<div class="content">
-																<h3 style="text-align: center">Dashboard</h3>
-																<br/>
-																<div class="title-block"><h4>Publication Year</h4></div>
-																<div class="scroll-menu">
-																	<div id="year-title-left" class="column left"></div>
-																	<div id="year-title-right" class="column right"></div>
-																	<div class="scroll-list">
-																		<div id="year-left" class="column left"></div>
-																		<div id="year-right" class="column right"></div>
-																	</div>
-																</div>
-																<br/>
-																<div id="curve_chart"></div>
-																<hr>
-																<div class="title-block"><h4>Type</h4></div>
-																<div class="scroll-menu">
-																	<div id="type-title-left" class="column left"></div>
-																	<div id="type-title-right" class="column right"></div>
-																	<div class="scroll-list" style="height:auto;">
-																		<div id="type-left" class="column left"></div>
-																		<div id="type-right" class="column right"></div>
-																	</div>
-																</div>
-																<br/>
-																<div id="pie_chart"></div>
-																<hr>
-																<div class="title-block"><h4>Jour. Summary</h4></div>
-																<div class="scroll-menu">
-																	<div id="jour-title-left" class="column left"></div>
-																	<div id="jour-title-right" class="column right"></div>
-																	<div class="scroll-list">
-																		<div id="jour-left" class="column left"></div>
-																		<div id="jour-right" class="column right"></div>
-																	</div>
-																</div>
-																<hr>
-																<div class="title-block"><h4>Conf. Summary</h4></div>
-																<div class="scroll-menu">
-																	<div id="conf-title-left" class="column left"></div>
-																	<div id="conf-title-right" class="column right"></div>
-																	<div class="scroll-list">
-																		<div id="conf-left" class="column left"></div>
-																		<div id="conf-right" class="column right"></div>
-																	</div>
-																</div>
-																<hr>
-																<div class="title-block"><h4>Research Topic</h4></div>
-																<div class="scroll-menu">
-																	<div id="topic-title-left" class="column titleleft"></div>
-																	<div id="topic-title-right" class="column titleright"></div>
-																	<div class="scroll-list">
-																		<div id="topic-left" class="column topicleft"></div>
-																		<div id="topic-right" class="column topicright"></div>
-																	</div>
-																</div>
-																<br/>
-																<div id="bar_chart"></div>
-																
-																
-															</div>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</td>
-									</tr>
-								</tbody>
-							</table>
+						
+						<div class="wrap">
+							<div id="main">
+								<div class="content">
+									<h2><b>Publications:</b></h2>
+							    	<br>
+								   <div class="search">
+								      <input id="search-key" type="text" class="searchTerm" placeholder="Search for publications...">
+								      <button id="submit" type="submit" class="searchButton">GO</button>
+								   </div>
+				    			
+				    				<label><a class="hyperlink" href="https://dblp.uni-trier.de/pers/hd/z/Zou_0001:Ying" target="_blank">Link to DBLP</a></label>
+				    				&nbsp;&nbsp;&nbsp;
+				    				<label><a class="hyperlink" href="https://scholar.google.ca/citations?user=pCYlknMAAAAJ&hl=en" target="_blank">Link to Google Scholar</a></label>
+				    			
+				    				<div id="topic-hints"></div>
+				    				<br>
+				    				<table id="filter-table" class="table-borderless" width="100%" style="text-align: left">
+										<tbody>
+											<tr>
+												<td style="padding-left: 20px"><b>Authors: </b></td>
+												<td id="filter-menu-th1" style="padding-left: 0px"></td>
+												<td style="padding-left: 10px"><b>Venues: </b></td>
+												<td id="filter-menu-th2" style="padding-left: 0px"></td>
+											</tr>
+											<tr>
+												<td>
+													<br/>
+												</td>
+												<td>
+													<br/>
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 20px"><b>Years: </b></td>
+												<td id="filter-menu-th3" style="padding-left: 0px"></td>
+												<td style="padding-left: 10px"><b>Sub-topics: </b></td>
+												<td id="filter-menu-th4" style="padding-left: 0px"></td>
+											</tr>
+										</tbody>
+									</table>
+									<br>
+				    				<label><i id="search-result"></i></label>		
+								</div>
+								<hr size="1" noshade>
+								<div id="full-list" class="content">
+								</div> 
+							</div>
+							<div id="sidebar">
+								<div class="title-block"><h4>Publication Year</h4></div>
+								<div class="scroll-menu">
+									<div id="year-title-left" class="column left"></div>
+									<div id="year-title-right" class="column right"></div>
+									<div class="scroll-list">
+										<div id="year-left" class="column left"></div>
+										<div id="year-right" class="column right"></div>
+									</div>
+								</div>
+								<br/>
+								<div class="title-block"><h4>Publication Year</h4></div>
+								<div class="scroll-menu">
+									<div id="curve_chart"></div>
+									<br>
+								</div>
+								<hr>
+								<div class="title-block"><h4>Type</h4></div>
+								<div class="scroll-menu">
+									<div id="type-title-left" class="column left"></div>
+									<div id="type-title-right" class="column right"></div>
+									<div class="scroll-list" style="height:auto;">
+										<div id="type-left" class="column left"></div>
+										<div id="type-right" class="column right"></div>
+									</div>
+								</div>
+								<br/>
+								<div class="title-block"><h4>Type</h4></div>
+								<div class="scroll-menu">
+									<div id="pie_chart"></div>
+									<br>
+								</div>
+								<hr>
+								<div class="title-block"><h4>Jour. Summary</h4></div>
+								<div class="scroll-menu">
+									<div id="jour-title-left" class="column left"></div>
+									<div id="jour-title-right" class="column right"></div>
+									<div class="scroll-list">
+										<div id="jour-left" class="column left"></div>
+										<div id="jour-right" class="column right"></div>
+									</div>
+								</div>
+								<hr>
+								<div class="title-block"><h4>Conf. Summary</h4></div>
+								<div class="scroll-menu">
+									<div id="conf-title-left" class="column left"></div>
+									<div id="conf-title-right" class="column right"></div>
+									<div class="scroll-list">
+										<div id="conf-left" class="column left"></div>
+										<div id="conf-right" class="column right"></div>
+									</div>
+								</div>
+								<hr>
+								<div class="title-block"><h4>Research Topic</h4></div>
+								<div class="scroll-menu">
+									<div id="topic-title-left" class="column titleleft"></div>
+									<div id="topic-title-right" class="column titleright"></div>
+									<div class="scroll-list">
+										<div id="topic-left" class="column topicleft"></div>
+										<div id="topic-right" class="column topicright"></div>
+									</div>
+								</div>
+								<br/>
+								<div class="title-block"><h4>Main Research Areas</h4></div>
+								<div class="scroll-menu">
+									<div id="bar_chart"></div>
+									<br>
+								</div>
+							</div>
 						</div>
+						
 					</div>
 				</div>		
 			</section>
@@ -568,11 +582,11 @@
 						var vBr1 = document.createElement('br');
 						var vBr2 = document.createElement('br');
 						var maxlen;
-						if (window.detect() === true) {
-							maxlen = 5;
+						if ($(window).width() < 1024) {
+							maxlen = 100;
 						}
 						else {
-							maxlen = 8;
+							maxlen = 10;
 						}
 						if (jourList[i].name.length > maxlen) {
 							vName.innerText = jourList[i].name.slice(0,maxlen-2)+"..";
@@ -607,11 +621,11 @@
 						var vBr1 = document.createElement('br');
 						var vBr2 = document.createElement('br');
 						var maxlen;
-						if (window.detect() === true) {
-							maxlen = 5;
+						if ($(window).width() < 1024) {
+							maxlen = 100;
 						}
 						else {
-							maxlen = 8;
+							maxlen = 10;
 						}
 						if (confList[i].name.length > maxlen) {
 							vName.innerText = confList[i].name.slice(0,maxlen-2)+"..";
@@ -710,8 +724,8 @@
 					var vBr2 = document.createElement('br');
 
 					var maxlen;
-					if (window.detect() === true) {
-						maxlen = 9;
+					if ($(window).width() < 1024) {
+						maxlen = 100;
 					}
 					else {
 						maxlen = 18;
@@ -830,7 +844,6 @@
 						]);
 					// Optional; add a title and set the width and height of the chart
 					var options = {
-						title:'Main Research Areas', 
 						height: 180,
 						vAxis: {
 							textPosition: "out",
@@ -1677,8 +1690,7 @@
 					function drawChart1() {
 						var data = google.visualization.arrayToDataTable(yearList);
 						var options = {
-							title: 'Year of Publications',
-							titleTextStyle: {fontSize: 15, bold: true},
+							titlePosition: 'none',
 							curveType: 'function',
 							legend: { position: 'bottom' }
 						};
@@ -1693,7 +1705,7 @@
 						var data = google.visualization.arrayToDataTable(typeList);
 						// Optional; add a title and set the width and height of the chart
 						var options = {
-							title:'Type of Publications', 
+							titlePosition: 'none',
 							legend: { position: 'right'}, 
 							sliceVisibilityThreshold: 0,
 							titleTextStyle: {fontSize: 15, bold: true}
