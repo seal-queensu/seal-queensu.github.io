@@ -1,0 +1,64 @@
+ul {
+  margin: 0;
+}
+ul.dashed {
+  list-style-type: none;
+}
+ul.dashed > li {
+  text-indent: -3px;
+}
+ul.dashed > li:before {
+  content: "-";
+  text-indent: -3px;
+}
+
+.color-border{background:url(../img/color_border.jpg) repeat-x scroll center top;width:100%;float:left;display:block;height:6px;}
+#main-slider img{box-shadow:1px 3px 3px #9E9E9E;}
+#member-category{background-color:#FAFAFA !important;box-shadow:1px 2px 3px #9E9E9E;}
+#contact-info .contact-container{padding-bottom:40px;}
+.col-sm-3{padding-top:20px;padding-bottom:20px;}
+#footer{text-align:center;background-color:#1c1c1c;color:white;padding-top:1px;padding-bottom:1px;bottom:0;}
+.InfoContainer{padding-top:20px;padding-bottom:20px; background-color: #fff}
+.title-container{background-color:#FAFAFA !important;text-align:center;color:#333333;padding-top:1px;box-shadow:0px 2px 3px #9E9E9E;}
+.image-container{padding-top:20px;vertical-align:center;text-align:center;}
+.InfoContainer{vertical-align:center;padding-top:30px;}
+.contact-info{padding-bottom:40px;}
+#about-us{vertical-align:center;font-size:16px;}
+#contact-info{font-size:16px;}
+#sponsor-info{font-size:16px;}
+#about-us .image-container{vertical-align:center !important;}
+.active > a{background-color:#337ab7 !important;color:#fff!important;border-radius:10px;}
+.title-container{padding-top:5px;padding-bottom:10px;}
+header{background:#e7e7e7!important;color:#333333 !important;margin-bottom:0 !important;}
+#bs-example-navbar-collapse-1{padding-top:0px;}
+header .navbar-brand{padding-bottom:5px;padding-top:1px;padding-left:50px;}
+header a{color:#212121 !important;}
+#member-category{padding-top:7px;}
+#member-category .active > a{background-color:transparent !important;color:#337ab7!important;}
+#member-category .active:hover{background-color:transparent;}
+#member-category a{font-size:18px;color:black;font-style:inherit;}
+#member-category .navbar-nav{float:none;margin:0 auto;display:table;table-layout:fixed;}
+header .container{padding:10px;font-size:18px;color:#fff;width: 100%;}
+h5{color:green;font-size:18px;}
+#main-slider{position:relative;text-align:center;}
+.no-margin{margin:0;padding:0;}
+#main-slider .carousel .carousel-content{margin-top:30px;}
+#main-slider .carousel .slide-margin{margin-top:1px;}
+#main-slider .carousel .logo{font-weight:600;margin:20px 0;padding:0 10px;border-radius:10px;border:1px solid #9bcaec;border-bottom:0;border-right:0;box-shadow:6px 3px #ddd;}
+#main-slider .carousel .logo i{color:#3498db;}
+#main-slider .carousel h2{color:#666;font-weight:500;margin:20px 0;}
+#main-slider .carousel .btn-slide{padding:8px 20px;background:#3498db;color:#fff;border-radius:4px;margin-top:25px;display:inline-block;}
+.carousel-inner{height:850px;}
+#main-slider .carousel .item{background-position:50%;background-repeat:no-repeat;background-size:cover;left:0 !important;opacity:0;top:0;position:absolute;width:100%;display:block !important;height:640px;-webkit-transition:opacity ease-in-out 500ms;-moz-transition:opacity ease-in-out 500ms;-o-transition:opacity ease-in-out 500ms;transition:opacity ease-in-out 500ms;}
+#main-slider .carousel .item:first-child{top:auto;position:relative;}
+#main-slider .carousel .item.active{opacity:1;-webkit-transition:opacity ease-in-out 500ms;-moz-transition:opacity ease-in-out 500ms;-o-transition:opacity ease-in-out 500ms;transition:opacity ease-in-out 500ms;z-index:1;}
+#main-slider .prev, #main-slider .next{position:absolute;top:50%;background-color:#fff;color:#ccc;display:inline-block;margin-top:-25px;height:40px;line-height:40px;width:40px;line-height:40px;text-align:center;border-radius:4px;z-index:5;opacity:0.8;}
+#main-slider .prev:hover, #main-slider .next:hover{background-color:#3498db;}
+#main-slider .prev{left:10px;}
+#main-slider .next{right:10px;}
+#main-slider .carousel-indicators li{width:14px;height:14px;margin:0 15px 0 0;position:relative;}
+#main-slider .carousel-indicators li:after{position:absolute;content:"";width:18px;height:18px;border-radius:100%;border:1px solid #c3dff4;left:-3px;top:-3px;}
+#main-slider .carousel-indicators .active{width:14px;height:14px;background-color:#fff;margin:0 15px 0 0;border:1px solid #3498db;position:relative;}
+#main-slider .carousel-indicators .active:after{position:absolute;content:"";width:18px;height:18px;border-radius:100%;background:#fff;border:1px solid #3498db;left:-3px;top:-3px;}
+#staticlist { text-align:center; width:100%; }
+#staticlist iframe { width: 90%; }
