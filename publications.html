@@ -258,7 +258,7 @@
 				    				<label><i id="search-result"></i></label>		
 								</div>
 								<hr size="1" noshade>
-								<div id="full-list" class="content">
+								<div id="full-list" class="content" style="max-height:1500px;overflow-y: auto;">
 								</div> 
 							</div>
 							<div id="sidebar">
@@ -1595,11 +1595,31 @@
 						else {
 							a.href = "publications/pdf/" + cells[11] + ".pdf";
 						}
+
+						var a2 = document.createElement('a');
+						var img2 = document.createElement('img');
+						img2.src = "img/pdf-icon.jpg";
+						a2.appendChild(img2);
+						if (cells[14] != "") {
+							a2.target="_blank";
+						}
+						if (cells[14].slice(0,4) === "http") {
+							a2.href = cells[14];
+						}
+						else {
+							a2.href = "publications/presentation/" + cells[14] + ".pdf";
+						}
+
 						td2.appendChild(a);
 						td2.width = "30";
 
+						var td3 = document.createElement('td');
+						td3.appendChild(a2);
+						td3.width = "30";
+
 						tr.appendChild(td1);
 						tr.appendChild(td2);
+						tr.appendChild(td3);
 						tbody.appendChild(tr);
 						table.appendChild(tbody);
 						table.appendChild(hr);

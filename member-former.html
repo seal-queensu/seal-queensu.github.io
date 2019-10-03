@@ -425,8 +425,30 @@
 					var div1 = document.createElement('div');
 
 					var firstName = order[i][nameCol].split(" ")[0];
+					var imgFrame = document.createElement('div');
+					imgFrame.style = "width:150px;height:200px;margin:auto;position:relative";
 					img.src = "img/members/" + firstName + ".jpg";
-					img.style = "width:150px;height:175px;";
+					img.style = "vertical-align:middle;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto";
+					img.onload = function(){
+						var maxWidth = 150; // Max width for the image
+				        var maxHeight = 175;    // Max height for the image
+				        var width = this.width;    // Current image width
+				        var height = this.height;  // Current image height
+				        var ratio = 0;
+				        if (height / width >= 7/6) {
+				        	ratio = maxHeight / height;
+				            width = width * ratio;
+				            this.width = width;
+				            this.height = maxHeight;
+				        }
+				        else {
+				            ratio = maxWidth / width;
+				            height = height * ratio;
+				            this.width = maxWidth;
+				            this.height = height;
+				        }
+					};
+					imgFrame.appendChild(img);
 
 					profile.href = order[i][profileCol];
 					profile.innerText = order[i][nameCol];
@@ -458,7 +480,7 @@
 					email.appendChild(emaila);
 					
 					div2.className = "carousel-content";
-					div2.appendChild(img);
+					div2.appendChild(imgFrame);
 					div2.appendChild(name);
 					div2.appendChild(desc);
 					if (monthS != undefined && monthE != undefined) {

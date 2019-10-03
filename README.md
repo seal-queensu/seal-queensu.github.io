@@ -36,11 +36,13 @@ In `PublicationList.csv`, we have 13 columns. For each column, here are tips for
 **K column (VenueNames)**: For publications, which do not exist in `Venue.csv` and have no abbrs, please input 'Others' in the (Venues) column, and then input the whole venue name (as it appears on the paper) into K column (Venuenames). If it is a thesis, please input the type of thesis (Master's or Ph.D.) into K column (Venuenames).
 Otherwise, leave it blank.
 
-**L column (PDFNames)**: Input your PDF filename here and put it under the ./publications/pdf direction. The name we recommended is 'Abbr for Venue-First Name of First Author-Published Year' (do not input the type name .pdf here). If not leave it blank or the URL for the related website.
+**L column (PDFNames)**: Input your PDF filename here and put it under the `./publications/pdf` direction. The name we recommended is 'Abbr for Venue-First Name of First Author-Published Year' (do not input the type name .pdf here). If not leave it blank or the URL for the related website.
 
 **M column (Sub-topics) *Necessary***: Input the sub-topics of your publication. 
 
-**M column (Topics) *Necessary***: Input the Topics of your publication. 
+**N column (Topics) *Necessary***: Input the Topics of your publication.
+
+**O column (Topics)**: Input your PDF filename here (do not input the type name .pdf) and put it under the `./publications/presentation` direction. If not leave it blank or the URL for the related website.
 
 ## Venue Update:
 You can add new venues with abbreviations in the file, `Venue.csv`, whose direction is `./publications/Venue.csv`. 
