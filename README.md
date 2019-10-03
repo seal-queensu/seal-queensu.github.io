@@ -1,4 +1,4 @@
-# ztwater.github.io
+# seal-queensu.github.io
 
 ## Publication Update:
 You can add your publication record in the file, `PublicationList.csv`, whose direction is `./publications/PublicationList.csv`. 
