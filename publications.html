@@ -56,35 +56,35 @@
 		}
 		.left {
 			width: 60%;
-			text-align: right;
-			padding-right: 40px;
+			text-align: left;
+			padding-left: 40px;
 		}
 		.right {
 			width: 40%;
 			text-align: right;
-			padding-right: 30px;
+			padding-right: 40px;
 		}
 		.topicleft {
 			width: 70%;
-			text-align: right;
-			padding-right: 10px;
+			text-align: left;
+			padding-left: 20px;
 		}
 
 		.topicright {
 			width: 30%;
 			text-align: right;
-			padding-right: 10px;
+			padding-right: 40px;
 		}
 		.titleleft {
 			width: 70%;
-			text-align: right;
-			padding-right: 10px;
+			text-align: left;
+			padding-left: 40px;
 		}
 
 		.titleright {
 			width: 30%;
 			text-align: right;
-			padding-right: 10px;
+			padding-right: 40px;
 		}
 		</style>
 		<style>
@@ -278,7 +278,7 @@
 									<br>
 								</div>
 								<hr>
-								<div class="title-block"><h4>Type</h4></div>
+								<div class="title-block"><h4>Publication Type</h4></div>
 								<div class="scroll-menu">
 									<div id="type-title-left" class="column left"></div>
 									<div id="type-title-right" class="column right"></div>
@@ -288,13 +288,13 @@
 									</div>
 								</div>
 								<br/>
-								<div class="title-block"><h4>Type</h4></div>
+								<div class="title-block"><h4>Publication Type</h4></div>
 								<div class="scroll-menu">
 									<div id="pie_chart"></div>
 									<br>
 								</div>
 								<hr>
-								<div class="title-block"><h4>Jour. Summary</h4></div>
+								<div class="title-block"><h4>Journal Summary</h4></div>
 								<div class="scroll-menu">
 									<div id="jour-title-left" class="column left"></div>
 									<div id="jour-title-right" class="column right"></div>
@@ -304,7 +304,7 @@
 									</div>
 								</div>
 								<hr>
-								<div class="title-block"><h4>Conf. Summary</h4></div>
+								<div class="title-block"><h4>Conference Summary</h4></div>
 								<div class="scroll-menu">
 									<div id="conf-title-left" class="column left"></div>
 									<div id="conf-title-right" class="column right"></div>
@@ -568,7 +568,7 @@
 					var r = document.createElement('b');
 					var br1 = document.createElement('br');
 					var br2 = document.createElement('br');
-					l.innerText = "Jour";
+					l.innerText = "Journal";
 					r.innerText = "#";
 					titleLeft.appendChild(l);
 					titleLeft.appendChild(br1);
@@ -586,7 +586,7 @@
 							maxlen = 100;
 						}
 						else {
-							maxlen = 10;
+							maxlen = 11;
 						}
 						if (jourList[i].name.length > maxlen) {
 							vName.innerText = jourList[i].name.slice(0,maxlen-2)+"..";
@@ -607,7 +607,7 @@
 					var r = document.createElement('b');
 					var br1 = document.createElement('br');
 					var br2 = document.createElement('br');
-					l.innerText = "Conf";
+					l.innerText = "Conference";
 					r.innerText = "#";
 					titleLeft.appendChild(l);
 					titleLeft.appendChild(br1);
@@ -625,7 +625,7 @@
 							maxlen = 100;
 						}
 						else {
-							maxlen = 10;
+							maxlen = 11;
 						}
 						if (confList[i].name.length > maxlen) {
 							vName.innerText = confList[i].name.slice(0,maxlen-2)+"..";
@@ -727,8 +727,17 @@
 					if ($(window).width() < 1024) {
 						maxlen = 100;
 					}
-					else {
+					else if ($(window).width() >= 1024 && $(window).width() < 1150){
+						maxlen = 16;
+					}
+					else if ($(window).width() >= 1150 && $(window).width() < 1260){
+						maxlen = 17;
+					}
+					else if ($(window).width() >= 1260 && $(window).width() < 1370){
 						maxlen = 18;
+					}
+					else {
+						maxlen = 20;
 					}
 					if (topicList[i].name.length > maxlen) {
 						vName.innerText = topicList[i].name.slice(0,maxlen-2)+"..";
@@ -1376,13 +1385,11 @@
 					if (typeX === "refereed conference and workshop publications") typeX = 2;
 					if (typeX === "theses") typeX = 3;
 					if (typeX === "patents") typeX = 4;
-					if (typeX === "invited talks") typeX = 5;
 					if (typeY === "journal papers") typeY = 0;
 					if (typeY === "books or book chapters") typeY = 1;
 					if (typeY === "refereed conference and workshop publications") typeY = 2;
 					if (typeY === "theses") typeY = 3;
 					if (typeY === "patents") typeY = 4;
-					if (typeY === "invited talks") typeY = 5;
 					var titleX = x[0].toLowerCase();
 					var titleY = y[0].toLowerCase();
 					var monthX = Number(x[monthCol]);
@@ -1426,7 +1433,7 @@
 					var fullList = document.getElementById('full-list');
 
 					var yearCount = 0;
-					var typeCount = [0, 0, 0, 0, 0, 0];
+					var typeCount = [0, 0, 0, 0, 0];
 
 					var yearList = [];
 					var typeList = [['Type', 'Number']];
@@ -1440,7 +1447,6 @@
 						if (type.toString().toLowerCase()  === "refereed conference and workshop publications") typeCount[2]++;
 						if (type.toString().toLowerCase() === "theses") typeCount[3]++;
 						if (type.toString().toLowerCase()  === "patents") typeCount[4]++;
-						if (type.toString().toLowerCase()  === "invited talks") typeCount[5]++;
 						//Create a new year section
 						if (tmpYear != year){
 							if (yearId != 0) {
@@ -1677,8 +1683,9 @@
 					typeTitleRight.appendChild(r);
 					typeTitleRight.appendChild(br2);
 
-					var typeString = ["Journal", "Book", "Conference", "Thesis", "Patent", "Talk"];
-					var simType = ["Jour.", "Book", "Conf.", "Thes.", "Pat.", "Talk"];
+					var typeString = ["Journal", "Book", "Conference", "Thesis", "Patent"];
+					//var simType = ["Jour.", "Book", "Conf.", "Thes.", "Pat."];
+					var simType = ["Journal", "Book", "Conference", "Thesis", "Patent"];
 					for (var i = 0; i < typeCount.length; i++) {
 						var typeLeft = document.getElementById('type-left');
 			       		var typeRight = document.getElementById('type-right');
@@ -1712,7 +1719,8 @@
 						var options = {
 							titlePosition: 'none',
 							curveType: 'function',
-							legend: { position: 'bottom' }
+							legend: { position: 'bottom'},
+							hAxis: {showTextEvery: '4'}
 						};
 						var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 						chart.draw(data, options);
@@ -1726,7 +1734,7 @@
 						// Optional; add a title and set the width and height of the chart
 						var options = {
 							titlePosition: 'none',
-							legend: { position: 'right'}, 
+							legend: { position: 'bottom', maxLines:'3'}, 
 							sliceVisibilityThreshold: 0,
 							titleTextStyle: {fontSize: 15, bold: true}
 						};
