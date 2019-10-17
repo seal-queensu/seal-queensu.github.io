@@ -42,7 +42,7 @@ Otherwise, leave it blank.
 
 **N column (Topics) *Necessary***: Input the Topics of your publication.
 
-**O column (Topics)**: Input your PDF filename here (do not input the type name .pdf) and put it under the `./publications/presentation` direction. If not leave it blank or the URL for the related website.
+**O column (Presentation)**: Input your PDF filename here (do not input the type name .pdf) and put it under the `./publications/presentation` direction. If not leave it blank or the URL for the related website.
 
 ## Venue Update:
 You can add new venues with abbreviations in the file, `Venue.csv`, whose direction is `./publications/Venue.csv`. 
@@ -85,7 +85,7 @@ In `memberInfo.csv`, we have 7 columns. For each column, here are tips for updat
 
 **G column (Comment):** Input other description for students, such as collaborator. If you do not have it, leave it blank.
 
-**G column (Affiliation):** Input collaborators' affiliations. If you do not have it, leave it blank.
+**H column (Affiliation):** Input collaborators' affiliations. If you do not have it, leave it blank.
 
 Then if you have the photo for students, please named it by his/her first Name and in jpeg format (e.g. `Justin.jpg`), and put it in the direction `./img/members/`.
 
