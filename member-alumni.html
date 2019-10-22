@@ -1,0 +1,532 @@
+<html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150315178-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-150315178-1');
+		</script>
+		<title>Alumni</title>
+		<meta charset="utf-8">
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/prettyPhoto.css" rel="stylesheet">	
+		<!-- <link href="css/main.css" rel="stylesheet"> -->
+		<link href="css/responsive.css" rel="stylesheet">
+		<!-- <link href="css/SAIL.css" rel="stylesheet"> -->
+		<link href="css/home.css" rel="stylesheet">
+		<style>
+		.hyperlink{
+			color:#337ab7;		
+		}
+		.hyperlink:hover{
+			color:#697e91;
+		}
+		</style>
+		<style>
+		.wrap .header {
+			width: 95%;
+            margin: 0 auto;
+        }
+        .logo {
+            width: 100%;
+            float: left;
+        }
+        .menu {
+        	width: 100%;
+        	float: left;
+        	padding-top: 10px;
+        	text-align: center;
+        }
+        #main, #sidebar {
+            width: 100%;
+            float: left;
+            padding: 20px;
+        }
+        @media only screen and (min-width: 1024px) {
+            .wrap .header {
+                width: 100%;
+                margin: 0 auto;
+            }
+            #main {
+                width: 70%;
+                float: left;
+            }
+            #sidebar {
+                width: 30%;
+                float: left;
+            }
+            .logo {
+                width: 40%;
+                float: left;
+            }
+            .menu {
+                width: 60%;
+                float: left;
+                padding-top: 25px;
+                padding-left: 50px;
+            }
+        }        	
+		</style>
+	</head>
+
+	<body class="member">
+		<header class="navbar navbar-static-top navbar-default">
+        	<div class="container header"  align="center"> 
+				<div class="logo" align="center">
+					<a href="index.html"></a>
+					<img style="height: 100px;" src="img/logos/logo_circle_normalfont.png" alt="Software Evolution and Analytics Group" hspace="0">
+				</div>
+		        <div class="menu">
+		            <ul class="nav navbar-nav navbar-right" style="display: inline-block;float: none;">
+		                <li><a href="index.html">Home</a></li>
+		                <li class="active"><a href="member-current.html">People<span class="sr-only">(current)</span></a></li>
+		                <li><a href="publications.html">Publications</a></li>
+		                <li><a href="sponsors.html">Sponsors</a></li>
+		                <li><a href="contact.html">Contact</a></li>
+		            </ul>	          
+		        </div>
+			</div>			
+		</header>
+		<main>
+<!-- Start of Newly added parts -->
+			<!-- Start of Header -->
+			<section id="member-category" style="padding-top: 0">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"style="background-color: #f2f2f2">
+		            <ul class="nav navbar-nav">
+		                <li><a href="member-current.html">Current Members</a></li>
+		                <li class="active"><a href="member-former.html"><strong>Alumni</strong><span class="sr-only">(current)</span></a></li>
+		                <li><a href="member-collaborators.html">Collaborators</a></li>
+		          	</ul>
+		        </div>
+			</section>
+			
+			<!-- End of Header -->
+
+			<section id="main-slider" class="no-margin" >
+				<div class="InfoContainer">
+				<div class="container">
+				  	<div class="members-container">
+				  		<div class="all-members" id="former-members">
+						</div>
+					</div>
+				</div>
+			</div>
+			</section>
+			
+<!-- End of Newly added parts -->			
+
+
+
+		</main>
+
+
+		<footer id="footer">
+			<div class="footer-container">
+				<h2>Software Evolution and Analytics Lab (SEAL)</h2>
+				<p>Department of Electrical and Computer Engineering</p>
+				<p>Queen's University</p>
+				<p>Kingston, Ontario, Canada</p>
+			</div>
+		</footer>
+				
+		<style>
+			#footer{
+				background-color: #e7e7e7;
+				color:#000;
+			}
+		</style>
+
+		
+		<script type="text/javascript" src="js/jquery.js"></script>
+  		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+  		<script type="text/javascript">
+  			$(document).ready(function(){
+				$.ajax({
+					url: "members/memberInfo.csv",
+					dataType: "text", 
+					success: function(data){
+						//process the data into a table
+						var lines = data.split(/\r?\n|\r/);
+						var headCells = lines[0].split(',');
+						var lineNum = lines.length-1;
+						var bodyLines = [];
+						for (var lineCount = 1; lineCount<lineNum; lineCount++){
+							bodyLines[lineCount-1] = lines[lineCount].split(',');
+						}
+						var formerMembers = document.getElementById("former-members");
+						var former = getFormer(headCells, bodyLines);
+						var postDocs = getPostDocs(headCells, former);
+						if (postDocs.length > 0) {
+							var h = document.createElement("h3");
+							var hr = document.createElement("hr");
+							h.innerText = "Post Doctoral Fellows";
+							formerMembers.appendChild(h);
+							formerMembers.appendChild(hr);
+							showContent(headCells, postDocs);
+						}
+
+						var phds = getPhDs(headCells, former);
+						if (phds.length > 0) {
+							var h = document.createElement("h3");
+							var hr = document.createElement("hr");
+							h.innerText = "Ph.D. Students";
+							formerMembers.appendChild(h);
+							formerMembers.appendChild(hr);
+							showContent(headCells, phds);
+						}
+
+						var masters = getMasters(headCells, former);
+						if (masters.length > 0) {
+							var h = document.createElement("h3");
+							var hr = document.createElement("hr");
+							h.innerText = "Master's Students";
+							formerMembers.appendChild(h);
+							formerMembers.appendChild(hr);
+							showContent(headCells, masters);
+						}
+
+						var ras = getResearchAssistants(headCells, former);
+						if (ras.length > 0) {
+							var h = document.createElement("h3");
+							var hr = document.createElement("hr");
+							h.innerText = "Research Assistants";
+							formerMembers.appendChild(h);
+							formerMembers.appendChild(hr);
+							showContent(headCells, ras);
+						}
+
+						var undergraduates = getUndergraduates(headCells, former);
+						if (undergraduates.length > 0) {
+							var h = document.createElement("h3");
+							var hr = document.createElement("hr");
+							h.innerText = "Undergraduate Students";
+							formerMembers.appendChild(h);
+							formerMembers.appendChild(hr);
+							showContent(headCells, undergraduates);
+						};
+
+
+
+					}
+
+				});
+
+			});
+
+			function getFaculties (headCells, bodyLines) {
+				var descriptionCol = headCells.indexOf("Description");
+				return bodyLines.filter(function(line) {
+					return line[descriptionCol] === "Canada Research Chair Tier II in Software Evolution";
+				});
+			}
+			function getFormer (headCells, bodyLines) {
+				var nameCol = headCells.indexOf("Name");
+				var startCol = headCells.indexOf("Start Date");
+				var endCol = headCells.indexOf("End Date");
+				return bodyLines.filter(function(line) {
+					return (line[startCol] != "") && (line[endCol] != "");
+				});
+			}
+
+			function getPostDocs (headCells, bodyLines) {
+				var nameCol = headCells.indexOf("Name");
+				var descriptionCol = headCells.indexOf("Description");
+				var endCol = headCells.indexOf("End Date");
+				return postDocs = bodyLines.filter(function(line) {
+					return line[descriptionCol] === "Post Doctoral Fellow";
+				}).sort(function (x, y) {
+					var endDateX = x[endCol].split('/');
+					var endDateY = y[endCol].split('/');
+					var yearX = Number(endDateX[0]);
+					var monthX = Number(endDateX[1]);
+					var yearY = Number(endDateY[0]);
+					var monthY = Number(endDateY[1]);
+					var nameX = x[nameCol].split(' ');
+					var lastNameX = nameX[nameX.length-1];
+					var nameY = y[nameCol].split(' ');
+					var lastNameY = nameY[nameY.length-1];
+					if (yearX < yearY) return 1;
+					else if (yearX > yearY) return -1;
+					else {
+						if (monthX < monthY) return 1;
+						else if (monthX > monthY) return -1;
+						else {
+							if (lastNameX < lastNameY) return -1;
+							else if (lastNameX > lastNameY) return 1;
+							else return 0;
+						}
+					}
+				});
+			}
+
+					
+									
+
+			function getPhDs (headCells, bodyLines) {
+				var nameCol = headCells.indexOf("Name");
+				var descriptionCol = headCells.indexOf("Description");
+				var endCol = headCells.indexOf("End Date");
+				return phds = bodyLines.filter(function(line) {
+					return line[descriptionCol] === "Ph.D. Student";
+				}).sort(function (x, y) {
+					var endDateX = x[endCol].split('/');
+					var endDateY = y[endCol].split('/');
+					var yearX = Number(endDateX[0]);
+					var monthX = Number(endDateX[1]);
+					var yearY = Number(endDateY[0]);
+					var monthY = Number(endDateY[1]);
+					var nameX = x[nameCol].split(' ');
+					var lastNameX = nameX[nameX.length-1];
+					var nameY = y[nameCol].split(' ');
+					var lastNameY = nameY[nameY.length-1];
+					if (yearX < yearY) return 1;
+					else if (yearX > yearY) return -1;
+					else {
+						if (monthX < monthY) return 1;
+						else if (monthX > monthY) return -1;
+						else {
+							if (lastNameX < lastNameY) return -1;
+							else if (lastNameX > lastNameY) return 1;
+							else return 0;
+						}
+					}
+				});
+			}
+
+			function getResearchAssistants (headCells, bodyLines) {
+				var nameCol = headCells.indexOf("Name");
+				var descriptionCol = headCells.indexOf("Description");
+				var endCol = headCells.indexOf("End Date");
+				return ras = bodyLines.filter(function(line) {
+					return line[descriptionCol] === "Research Assistant";
+				}).sort(function (x, y) {
+					var endDateX = x[endCol].split('/');
+					var endDateY = y[endCol].split('/');
+					var yearX = Number(endDateX[0]);
+					var monthX = Number(endDateX[1]);
+					var yearY = Number(endDateY[0]);
+					var monthY = Number(endDateY[1]);
+					var nameX = x[nameCol].split(' ');
+					var lastNameX = nameX[nameX.length-1];
+					var nameY = y[nameCol].split(' ');
+					var lastNameY = nameY[nameY.length-1];
+					if (yearX < yearY) return 1;
+					else if (yearX > yearY) return -1;
+					else {
+						if (monthX < monthY) return 1;
+						else if (monthX > monthY) return -1;
+						else {
+							if (lastNameX < lastNameY) return -1;
+							else if (lastNameX > lastNameY) return 1;
+							else return 0;
+						}
+					}
+				});
+			}
+
+			function getMasters (headCells, bodyLines) {
+				var nameCol = headCells.indexOf("Name");
+				var descriptionCol = headCells.indexOf("Description");
+				var endCol = headCells.indexOf("End Date");
+				return masters = bodyLines.filter(function(line) {
+					return (line[descriptionCol] === "Master's Student" || line[descriptionCol] === "MEng Student");
+				}).sort(function (x, y) {
+					var endDateX = x[endCol].split('/');
+					var endDateY = y[endCol].split('/');
+					var yearX = Number(endDateX[0]);
+					var monthX = Number(endDateX[1]);
+					var yearY = Number(endDateY[0]);
+					var monthY = Number(endDateY[1]);
+					var nameX = x[nameCol].split(' ');
+					var lastNameX = nameX[nameX.length-1];
+					var nameY = y[nameCol].split(' ');
+					var lastNameY = nameY[nameY.length-1];
+					if (yearX < yearY) return 1;
+					else if (yearX > yearY) return -1;
+					else {
+						if (monthX < monthY) return 1;
+						else if (monthX > monthY) return -1;
+						else {
+							if (lastNameX < lastNameY) return -1;
+							else if (lastNameX > lastNameY) return 1;
+							else return 0;
+						}
+					}
+				});
+			}
+
+			function getUndergraduates (headCells, bodyLines) {
+				var nameCol = headCells.indexOf("Name");
+				var descriptionCol = headCells.indexOf("Description");
+				var endCol = headCells.indexOf("End Date");
+				var index = headCells.indexOf("Comment");
+				return undergraduates = bodyLines.filter(function(line) {
+					return ((line[descriptionCol] != "Post Doctoral Fellow") 
+							&& (line[descriptionCol] != "Canada Research Chair Tier II in Software Evolution")
+							&& (line[descriptionCol] != "Ph.D. Student")
+							&& (line[descriptionCol] != "Research Assistant")
+							&& (line[descriptionCol] != "Master's Student")
+							&& (line[descriptionCol] != "MEng Student"));
+				}).sort(function (x, y) {
+					var endDateX = x[endCol].split('/');
+					var endDateY = y[endCol].split('/');
+					var yearX = Number(endDateX[0]);
+					var monthX = Number(endDateX[1]);
+					var yearY = Number(endDateY[0]);
+					var monthY = Number(endDateY[1]);
+					var nameX = x[nameCol].split(' ');
+					var lastNameX = nameX[nameX.length-1];
+					var nameY = y[nameCol].split(' ');
+					var lastNameY = nameY[nameY.length-1];
+					if (yearX < yearY) return 1;
+					else if (yearX > yearY) return -1;
+					else {
+						if (monthX < monthY) return 1;
+						else if (monthX > monthY) return -1;
+						else {
+							if (lastNameX < lastNameY) return -1;
+							else if (lastNameX > lastNameY) return 1;
+							else return 0;
+						}
+					}
+				});
+
+
+			}
+
+			function showContent(headCells, order) {
+				var nameCol = headCells.indexOf("Name");
+				var descriptionCol = headCells.indexOf("Description");
+				var startCol = headCells.indexOf("Start Date");
+				var endCol = headCells.indexOf("End Date");
+				var profileCol = headCells.indexOf("Profile");
+				var emailCol = headCells.indexOf("Email");
+				var commentCol = headCells.indexOf("Comment");
+
+				var recordNum = order.length;
+				var counter = 4;
+				var formerMembers = document.getElementById("former-members");
+				var lastDiv;
+				for (var i = 0; i < recordNum; i++) {
+					if (counter === 4){
+						counter = 0;
+						if (i != 0) formerMembers.appendChild(lastDiv);
+						lastDiv = document.createElement('div');
+						lastDiv.className = "row slide-margin";
+					}
+					var img = document.createElement('img');
+					var name = document.createElement('h4');
+					var profile = document.createElement('a');
+					var desc = document.createElement('h5');
+					var strong = document.createElement('strong');
+					var start = document.createElement('h6');
+					var br = document.createElement('h6');
+					var end = document.createElement('h6');
+					var email = document.createElement('h6');
+					var emaila = document.createElement('a');
+					var comment = document.createElement('h6');
+					var div2 = document.createElement('div');
+					var div1 = document.createElement('div');
+
+					var firstName = order[i][nameCol].split(" ")[0];
+					var imgFrame = document.createElement('div');
+					imgFrame.style = "width:150px;height:200px;margin:auto;position:relative";
+					img.src = "img/members/" + firstName + ".jpg";
+					img.style = "vertical-align:middle;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto";
+					img.onload = function(){
+						var maxWidth = 150; // Max width for the image
+				        var maxHeight = 175;    // Max height for the image
+				        var width = this.width;    // Current image width
+				        var height = this.height;  // Current image height
+				        var ratio = 0;
+				        if (height / width >= 7/6) {
+				        	ratio = maxHeight / height;
+				            width = width * ratio;
+				            this.width = width;
+				            this.height = maxHeight;
+				        }
+				        else {
+				            ratio = maxWidth / width;
+				            height = height * ratio;
+				            this.width = maxWidth;
+				            this.height = height;
+				        }
+					};
+					imgFrame.appendChild(img);
+
+					profile.href = order[i][profileCol];
+					profile.innerText = order[i][nameCol];
+					profile.className += "hyperlink";
+					if (order[i][profileCol] != "") {
+						profile.target="_blank";
+					}
+					name.appendChild(profile);
+
+					strong.innerText = order[i][descriptionCol];
+					desc.appendChild(strong);
+
+					var startDate = order[i][startCol].split('/');
+					var yearS = startDate[0];
+					var monthS = startDate[1];
+					var endDate = order[i][endCol].split('/');
+					var yearE = endDate[0];
+					var monthE = endDate[1];
+					
+					start.innerText = "from " + monthTranslate(monthS) + " " + yearS;
+					end.innerText = "to " + monthTranslate(monthE) + " " + yearE; 
+
+					comment.style = "color:grey";
+					comment.innerText = order[i][commentCol];
+
+					emaila.href = "mailto:" + order[i][emailCol];
+					emaila.className += "hyperlink";
+					emaila.innerText = order[i][emailCol];
+					email.appendChild(emaila);
+					
+					div2.className = "carousel-content";
+					div2.appendChild(imgFrame);
+					div2.appendChild(name);
+					div2.appendChild(desc);
+					if (monthS != undefined && monthE != undefined) {
+						div2.appendChild(start);
+						div2.appendChild(br);
+						div2.appendChild(end);
+					}
+					div2.appendChild(comment);
+					div2.appendChild(email);
+					
+					div1.className = "col-sm-3";
+					div1.appendChild(div2);
+					lastDiv.appendChild(div1);
+					counter++;
+				}
+				formerMembers.appendChild(lastDiv);
+			}
+
+			function monthTranslate(month) {
+				if (month === "01") return "January";
+				if (month === "02") return "February";
+				if (month === "03") return "March";
+				if (month === "04") return "April";
+				if (month === "05") return "May";
+				if (month === "06") return "June";
+				if (month === "07") return "July";
+				if (month === "08") return "August";
+				if (month === "09") return "September";
+				if (month === "10") return "October";
+				if (month === "11") return "November";
+				if (month === "12") return "December";
+			}
+  		</script>
+	</body>
+
+
+
+</html>
+
+
+
