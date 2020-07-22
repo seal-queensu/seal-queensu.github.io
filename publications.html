@@ -1634,7 +1634,13 @@
 
 						var a2 = document.createElement('a');
 						var img2 = document.createElement('img');
-						img2.src = "img/ppt-icon.png";
+						if ((cells[14].length >= 13 && cells[14].slice(0,13) === "https://youtu") || (cells[14].length >= 17 && cells[14].slice(0,17) === "https://www.youtu")) {
+							img2.src = "img/video-icon.png";
+						}
+						else {
+							img2.src = "img/ppt-icon.png";
+						}
+						
 						a2.appendChild(img2);
 						if (cells[14] != "") {
 							a2.target="_blank";
