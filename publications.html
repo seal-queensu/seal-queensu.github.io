@@ -792,31 +792,30 @@
 				hintsTitle.innerText = "Research Topics: ";
 				hintsDiv.appendChild(hintsTitle);
 				var j = 0;
-				var hints = document.createElement('p');
-				hints.style = "line-height:25px;display:inline;";
+				var hintsTable = document.createElement('table');
+				var hintsTR = document.createElement('tr');
+				hintsTable.style = "border=0;";
 				for (var i = 0; i < topicList.length; i++) {
+					var hintTD = document.createElement('td');
+					hintTD.style = "padding-right:10px;";
 					var hintsButton = document.createElement('button');
 					hintsButton.id = "hBtn-" + (i+1);
 					hintsButton.classList.add("hintsButtonNormal");
-					//var hintsText = topicList[i].name;
 					var hintsText = topicYearList[i].name;
-					var hintsSpace = document.createTextNode("\xa0\xa0\xa0\xa0\xa0");
 					
 					hintsButton.innerText = hintsText;
-					hintsButton.style = "border-radius:4px;height:25px;font-size:15px;";
-					hints.appendChild(hintsButton);
-					if (j != 2) {
-						hints.appendChild(hintsSpace);
-					}
-					hintsDiv.appendChild(hints);
-					if (j === 2) {
-						var Br = document.createElement('br');
-						hintsDiv.appendChild(Br);
-						hints = document.createElement('p');
-						hints.style = "line-height:25px;display:inline;";
+					hintsButton.style = "border-radius:4px;height:25px;width:100%;font-size:15px;";
+					hintTD.appendChild(hintsButton);
+					hintsTR.appendChild(hintTD);
+					if (j === 2 || i === (topicList.length-1)) {
+						hintsTable.appendChild(hintsTR);
+						if (i < (topicList.length-1)){
+							hintsTR = document.createElement('tr');
+						}
 					}
 					j = (j+1)%3;
 				}
+				hintsDiv.appendChild(hintsTable);
 				//Add topic into input
 				var buttonName = [];
 				//for (var i = 1; i <= topicList.length; i++) {
