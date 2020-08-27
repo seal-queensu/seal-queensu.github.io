@@ -797,14 +797,12 @@
 				hintsTable.style = "border=0;";
 				for (var i = 0; i < topicList.length; i++) {
 					var hintTD = document.createElement('td');
-					hintTD.style = "padding-right:10px;";
+					hintTD.style = "padding-right:3px;padding-bottom:4px;width:33.33%;";
 					var hintsButton = document.createElement('button');
 					hintsButton.id = "hBtn-" + (i+1);
 					hintsButton.classList.add("hintsButtonNormal");
-					var hintsText = topicYearList[i].name;
-					
-					hintsButton.innerText = hintsText;
-					hintsButton.style = "border-radius:4px;height:25px;width:100%;font-size:15px;";
+					hintsButton.innerText = topicYearList[i].name;
+					hintsButton.style = "border-radius:4px;height:25px;width:100%;font-size:13px;";
 					hintTD.appendChild(hintsButton);
 					hintsTR.appendChild(hintTD);
 					if (j === 2 || i === (topicList.length-1)) {
