@@ -1591,7 +1591,10 @@
 							span.appendChild(addText);
 						}
 
-						var timeText = document.createTextNode(monthTranslate(Number(cells[5])) + " " + cells[3]);
+						var monthText = monthTranslate(Number(cells[5]));
+						
+						monthText = (tmpType != "Theses" && monthText != "") ? "accepted in "+monthText : monthText; 
+						var timeText = document.createTextNode(monthText + " " + cells[3]);
 						span.appendChild(timeText);
 			
 						if (cells[9] != "") {
