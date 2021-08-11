@@ -1,0 +1,72 @@
+h1
+{
+	color: inherit;
+	font-weight: 700;
+	line-height: 1.25;
+	margin: 0 0 1rem 0
+}
+
+.Banner {
+	overflow: hidden;
+	position: relative;
+	text-align: center
+	padding: 4rem 0
+}
+
+.hero {
+	align-items: center;
+	background-color: #303846;
+	color: #ffffff;
+	display: flex;
+	padding: 4rem 2rem
+}
+
+.hero--primary {
+	--ifm-hero-background-color: #3578e5;
+	--ifm-hero-text-color: #ffffff
+}
+
+.hero--dark {
+	--ifm-hero-background-color: #303846;
+	--ifm-hero-text-color: #ffffff
+}
+
+.title_white {
+	font-size: 4.5rem
+}
+
+.title_pink{
+	font-size: 4.5rem;
+	color: #bb5a7d
+}
+
+.subtitle_white {
+	font-size: 2.1rem;
+	text-align: center
+}
+
+.NSERC {
+	font-size: 2.2rem
+}
+
+.logo_3-YD {
+	max-width: 200px
+}
+
+.logo_3-YD>circle {
+	fill:#c36e8c
+}
+
+.logo_3-YD>path {
+	fill: #ffffff
+}
+
+.logo_3-YD>g {
+	fill: #bb5a7d
+}
+
+@media screen and (max-width:966px) {
+	.Banner {
+		padding: 2rem
+	}
+}
