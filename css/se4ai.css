@@ -15,20 +15,20 @@ h1
 
 .hero {
 	align-items: center;
-	background-color: #303846;
-	color: #ffffff;
+	background-color: #ffffff;
+	color: #000000;
 	display: flex;
 	padding: 4rem 2rem
 }
 
 .hero--primary {
-	--ifm-hero-background-color: #3578e5;
-	--ifm-hero-text-color: #ffffff
+	--ifm-hero-background-color: #ffffff;
+	--ifm-hero-text-color: #000000
 }
 
 .hero--dark {
-	--ifm-hero-background-color: #303846;
-	--ifm-hero-text-color: #ffffff
+	--ifm-hero-background-color: #000000;
+	--ifm-hero-text-color: #000000
 }
 
 .title_white {
@@ -58,7 +58,7 @@ h1
 }
 
 .logo_3-YD>path {
-	fill: #ffffff
+	fill: #000000
 }
 
 .logo_3-YD>g {
