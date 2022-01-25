@@ -310,7 +310,7 @@
                 }
                 var span = document.createElement("span");
                 var hr = document.createElement("hr");
-                span.innerText = content;
+                span.innerHTML = content;
                 news.appendChild(span);
                 if (i != data.length - 1) news.appendChild(hr);
             }

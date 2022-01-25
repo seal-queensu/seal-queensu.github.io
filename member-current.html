@@ -268,7 +268,7 @@
         function getFaculties(headCells, bodyLines) {
             var descriptionCol = headCells.indexOf("Description");
             return bodyLines.filter(function(line) {
-                return line[descriptionCol] === "Canada Research Chair Tier II in Software Evolution";
+                return line[descriptionCol] === "Canada Research Chair Tier I in Software Evolution";
             });
         }
 
@@ -414,7 +414,7 @@
             var startCol = headCells.indexOf("Start Date");
             return undergraduates = bodyLines.filter(function(line) {
                 return ((line[descriptionCol] != "Post Doctoral Fellow") &&
-                    (line[descriptionCol] != "Canada Research Chair Tier II in Software Evolution") &&
+                    (line[descriptionCol] != "Canada Research Chair Tier I in Software Evolution") &&
                     (line[descriptionCol] != "Ph.D. Student") &&
                     (line[descriptionCol] != "Research Assistant") &&
                     (line[descriptionCol] != "Master's Student") &&
