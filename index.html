@@ -156,6 +156,62 @@
         .fade {
             animation: fadeIn 2s infinite alternate;
         }
+        
+        .slide {
+            width: 70%;
+            height: 70%;
+            overflow: hidden;
+            position: relative;
+            background-color: rgb(255, 255, 255);
+        }
+        
+        .slide>div {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            position: absolute;
+            animation: slide 30s infinite;
+            opacity: 0;
+        }
+        
+        .slide>div:nth-child(2) {
+            animation-delay: 5s;
+        }
+        
+        .slide>div:nth-child(3) {
+            animation-delay: 10s;
+        }
+        
+        .slide>div:nth-child(4) {
+            animation-delay: 15s;
+        }
+        
+        .slide>div:nth-child(5) {
+            animation-delay: 20s;
+        }
+        
+        .slide>div:nth-child(6) {
+            animation-delay: 25s;
+        }
+        
+        .slide>div:nth-child(7) {
+            animation-delay: 30s;
+        }
+        
+        @keyframes slide {
+            10% {
+                opacity: 1;
+            }
+            20% {
+                opacity: 1;
+            }
+            30% {
+                opacity: 0;
+            }
+            40% {
+                transform: scale(1);
+            }
+        }
     </style>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -197,9 +253,21 @@
                         <h2><b><span class="c">S</span>oftware <span class="c">E</span>volution & <span class="c">A</span>nalytics <span class="c">L</span>ab <span class="c2">(SEAL)</span></b></h2>
                     </div>
                     <br>
-                    <div width="100%" align="center">
+                    <!--<div width="100%" align="center">
                         <img src="img/gif.gif" width="60%">
                     </div>
+                    -->
+                    <center>
+                        <div class="slide">
+                            <div style="background-image:url(img/slide/1.jpg)"></div>
+                            <div style="background-image:url(img/slide/2.jpg)"></div>
+                            <div style="background-image:url(img/slide/3.jpg)"></div>
+                            <div style="background-image:url(img/slide/4.jpg)"></div>
+                            <div style="background-image:url(img/slide/5.jpg)"></div>
+                            <div style="background-image:url(img/slide/6.jpg)"></div>
+                            <div style="background-image:url(img/slide/7.jpg)"></div>
+                        </div>
+                    </center>
                     <br>
                     <div class="wrap">
                         <div id="main">
