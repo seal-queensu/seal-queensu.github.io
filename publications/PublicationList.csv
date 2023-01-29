@@ -1,4 +1,5 @@
 Title,Authors,Venues,Years,Types,Months,Tracks,Editors&Pages,Publishers,Awards,VenueNames,PDFNames,Sub-topics,Topics,Presentation
+Ranking Code Clones to Support Maintenance Activities,"Osama Ehsan, Foutse Khomh, Ying Zou, Dong Qiu",EMSE,2023,Journal Papers,1,,,,,,EMSE-Osama-2023,"Code Clones, Clone Evolution",Code Clones,
 Studying the Interplay between the Durations and Breakages of Continuous Integration Builds,"Taher A. Ghaleb, Safwat Hassan, Ying Zou",TSE,2022,Journal Papers,11,,,,,,TSE-Taher-2022,"Continuous Integration, Build Systems",Build Systems,
 Adopting Learning-to-rank Algorithm for Reviewer Recommendation,"Guoliang Zhao, Daniel Alencar da Costa, Jiawen Liu, Ying Zou",EVOKE-CASCON,2022,Refereed Conference and Workshop Publications,8,,,,,,EVOKE-CASCON-2022-Zhao,"Pull Request, Code Review",Software Analytics,
 Modeling User Reviews Through Bayesian Graph Attention Networks for Recommendation,"Yu Zhao, Qiang Xu, Ying Zou, Wei Li",TOIS,2022,Journal Papers,10,,,,,,,"Service Recommendation, Empirical Study",Web Services and Web Applications,
