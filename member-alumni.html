@@ -245,6 +245,16 @@
                         showContent(headCells, ras);
                     }
 
+                    var ras = getResearchAssociates(headCells, former);
+                    if (ras.length > 0) {
+                        var h = document.createElement("h3");
+                        var hr = document.createElement("hr");
+                        h.innerText = "Research Associates";
+                        formerMembers.appendChild(h);
+                        formerMembers.appendChild(hr);
+                        showContent(headCells, ras);
+                    }
+                    
                     var undergraduates = getUndergraduates(headCells, former);
                     if (undergraduates.length > 0) {
                         var h = document.createElement("h3");
@@ -375,6 +385,37 @@
             });
         }
 
+        function getResearchAssociates(headCells, bodyLines) {
+            var nameCol = headCells.indexOf("Name");
+            var descriptionCol = headCells.indexOf("Description");
+            var endCol = headCells.indexOf("End Date");
+            return ras = bodyLines.filter(function(line) {
+                return line[descriptionCol] === "Research Associate";
+            }).sort(function(x, y) {
+                var endDateX = x[endCol].split('/');
+                var endDateY = y[endCol].split('/');
+                var yearX = Number(endDateX[0]);
+                var monthX = Number(endDateX[1]);
+                var yearY = Number(endDateY[0]);
+                var monthY = Number(endDateY[1]);
+                var nameX = x[nameCol].split(' ');
+                var lastNameX = nameX[nameX.length - 1];
+                var nameY = y[nameCol].split(' ');
+                var lastNameY = nameY[nameY.length - 1];
+                if (yearX < yearY) return 1;
+                else if (yearX > yearY) return -1;
+                else {
+                    if (monthX < monthY) return 1;
+                    else if (monthX > monthY) return -1;
+                    else {
+                        if (lastNameX < lastNameY) return -1;
+                        else if (lastNameX > lastNameY) return 1;
+                        else return 0;
+                    }
+                }
+            });
+        }
+
         function getMasters(headCells, bodyLines) {
             var nameCol = headCells.indexOf("Name");
             var descriptionCol = headCells.indexOf("Description");
@@ -416,6 +457,7 @@
                     (line[descriptionCol] != "Canada Research Chair Tier II in Software Evolution") &&
                     (line[descriptionCol] != "Ph.D. Student") &&
                     (line[descriptionCol] != "Research Assistant") &&
+                    (line[descriptionCol] != "Research Associate") &&
                     (line[descriptionCol] != "Master's Student") &&
                     (line[descriptionCol] != "MEng Student"));
             }).sort(function(x, y) {
