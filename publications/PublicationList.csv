@@ -1,4 +1,5 @@
 Title,Authors,Venues,Years,Types,Months,Tracks,Editors&Pages,Publishers,Awards,VenueNames,PDFNames,Sub-topics,Topics,Presentation
+Enhancing Performance Bug Prediction Using Performance Code Metrics,"Guoliang Zhao, Stefanos Georgiou, Ying Zou, Safwat Hassan, Derek Truong, Toby Corbin",MSR,2024,Refereed Conference and Workshop Publications,3,,,,,,MSR-Guoliang-2024,Mining Software Repositories (MSR),,
 DVC in Open Source AI-development: The Action and the Reaction,"Lorena Barreto Simedo Pacheco,Musfiqur Rahman,Fazle Rabbi,Pouya Fathollahzadeh, Ahmad Abdellatif, Emad Shihab,Tse-Hsun (Peter) Chen,Jinqiu Yang, Ying Zou",CAIN,2024,Refereed Conference and Workshop Publications,1,,,,,,,,,
 Predicting the Change Impact of Resolving Defects by Leveraging the Topics of Issue Reports in Open Source Software Systems,"Maram Assi, Safwat Hassan, Stefanos Georgiou, Ying Zou",TOSEM,2023,Journal Papers,4,,,,,,TOSEM-Assi-2023,"Defects, Issue Reports","Software Analytics, Defect Prediction",
 Ranking Code Clones to Support Maintenance Activities,"Osama Ehsan, Foutse Khomh, Ying Zou, Dong Qiu",EMSE,2023,Journal Papers,1,,,,,,EMSE-Osama-2023,"Code Clones, Clone Evolution",Code Clones,
