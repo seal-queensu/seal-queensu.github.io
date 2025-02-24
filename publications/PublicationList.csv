@@ -1,5 +1,5 @@
 Title,Authors,Venues,Years,Types,Months,Tracks,Editors&Pages,Publishers,Awards,VenueNames,PDFNames,Sub-topics,Topics,Presentation
-Unraveling Code Clone Dynamics in Deep Learning Frameworks,"Maram Assi, Safwat Hassan, Ying Zou",TOSEM,2025,Journal Papers,2,,,,,,TOSEN-Assi-2025,Refactoring,Code Clone,
+Unraveling Code Clone Dynamics in Deep Learning Frameworks,"Maram Assi, Safwat Hassan, Ying Zou",TOSEM,2025,Journal Papers,2,,,,,,TOSEM-Assi-2025,Refactoring,Code Clone,
 An Empirical Study on Release-Wise Refactoring Patterns,"Shayan Noei, Heng Li, Ying Zou",ESEC/FSE,2025,Refereed Conference and Workshop Publications,2,,,,,,FSE-Shayan-25,Refactoring,Code Refactoring,
 CKTyper: Enhancing Type Inference for Java Code Snippets by Leveraging Crowdsourcing Knowledge in Stack Overflow,"Anji Li, Neng Zhang, Ying Zou, Zhixiang Chen, Jian Wang, Zibin Zheng",ESEC/FSE,2025,Refereed Conference and Workshop Publications,2,,,,,,FSE-Anji-25,Crowdsourcing Knowledg,Type Inference,
 LLM-Driven Code Refactoring: Opportunities and Limitations,"Jonathan Cordeiro, Shayan Noei, Ying Zou",AI-IDE,2025,Refereed Conference and Workshop Publications,2,,,,,,IDE-Jonathan-2025,Refactoring,Code Refactoring,
