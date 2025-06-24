@@ -1,4 +1,6 @@
 Title,Authors,Venues,Years,Types,Months,Tracks,Editors&Pages,Publishers,Awards,VenueNames,PDFNames,Sub-topics,Topics,Presentation
+Impact of Extensions on Browser Performance: An Empirical Study on Google Chrome,"Bihui Jin, Heng Li, Ying Zou",EMSE,2025,Journal Papers,2,,,,,,EMSE-Bihui-2025,"Browser Performance, Energy Consumption",Browser Performance,
+LLM-Cure: LLM-based Competitor User Review Analysis for Feature Enhancement,"Maram Assi, Safwat Hassan, Ying Zou",TOSEM,2025,Journal Papers,2,,,,,,TOSEM-Maram-2025,Refactoring,Code Clone,
 LLM-Cure: LLM-based Competitor User Review Analysis for Feature Enhancement,"Maram Assi, Safwat Hassan, Ying Zou",TOSEM,2025,Journal Papers,6,,,,,,TOSEM-Maram-2025,Refactoring,Code Clone,
 Towards Refining Developer Questions using LLM-Based Named Entity Recognition for Developer Chatroom Conversations,"Pouya Fathollahzadeh, Mariam EI Mezouar, Hao Li, Ying Zou, Ahmed E. Hassan",,2025,,,,,,,,Arxiv_Pouya_SENIR_2025,"Software Evolution, Empirical Software Engineering", Developer Chatroom,
 An Empirical Study on Collaborative Uses of Communication Channels for Software Development and Management,"Mariam EI Mezouar, Daniel Alencar Da Costa, Ying Zou",CASCON,2024,Refereed Conference and Workshop Publications,2,,,,,,CASCON-Mariam-2025,Communication Channels,Social Software Engineering,
