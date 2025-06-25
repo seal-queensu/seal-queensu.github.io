@@ -553,7 +553,7 @@
 
                 strong.innerText = order[i][descriptionCol];
                 desc.appendChild(strong);
-				    
+		
 		// Add Services link for Ying Zou
 		if (order[i][descriptionCol] === "Canada Research Chair Tier I in Software Evolution") {
 		    var services = document.createElement('h6');
@@ -563,7 +563,7 @@
 		    servicesLink.target = "_blank";
 		    servicesLink.innerText = "Services for the research community";
 		    services.appendChild(servicesLink);
-		    div2.appendChild(services);
+		    desc.appendChild(services); // Append to `desc`, not `div2`
 		}
 		
 		// Add Services link for Shayan Noei
@@ -575,7 +575,7 @@
 		    servicesLink.target = "_blank";
 		    servicesLink.innerText = "Services for the research community";
 		    services.appendChild(servicesLink);
-		    div2.appendChild(services);
+		    desc.appendChild(services); // Append to `desc`, not `div2`
 		}
 		    
                 var startDate = order[i][startCol].split('/');
