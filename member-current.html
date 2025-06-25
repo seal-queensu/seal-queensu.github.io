@@ -553,7 +553,18 @@
 
                 strong.innerText = order[i][descriptionCol];
                 desc.appendChild(strong);
-
+		    
+	        if (order[i][descriptionCol] === "Canada Research Chair Tier I in Software Evolution") {
+	            var services = document.createElement('h6');
+	            var servicesLink = document.createElement('a');
+	            servicesLink.className = "hyperlink";
+	            servicesLink.href = "https://conf.researchr.org/profile/yingzou";
+	            servicesLink.target = "_blank";
+	            servicesLink.innerText = "Services for the research community";
+	            services.appendChild(servicesLink);
+	            div2.appendChild(services);
+	        }
+		    
                 var startDate = order[i][startCol].split('/');
                 var year = startDate[0];
                 var month = startDate[1];
