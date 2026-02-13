@@ -2,7 +2,7 @@ Title,Authors,Venues,Years,Types,Months,Tracks,Editors&Pages,Publishers,Awards,V
 An Empirical Study on the Characteristics of Reusable Code Clones,"Chunli Yu, Shayan Noei, Haoxiang Zhang, Ying Zou",TOSEM,2026,Journal Papers,1,,,,,,TOSEM-Chunli-2026,,,
 An Empirical Analysis of Community and Coding Patterns in OSS4SG vs. Conventional OSS,"Mohamed Ouf, Shayan Noei, Zeph Van Iterson, Mariam Guizani, Ying Zou",ICSE,2026,Refereed Conference and Workshop Publications,1,,,,,,Ouf-ICSE-2026,,,
 Energy-Efficient Software Development: A Multi-dimensional Empirical Analysis of Stack Overflow,"Bihui Jin, Heng Li, Pengyu Nie, Ying Zou",ICSE,2026,Refereed Conference and Workshop Publications,,,,,,,ICSE_Bihui_2026,"Software Evolution, Empirical Software Engineering", ,
-Towards Refining Developer Questions using LLM-Based Named Entity Recognition for Developer Chatroom Conversations,"Pouya Fathollahzadeh, Mariam EI Mezouar, Hao Li, Ying Zou, Ahmed E. Hassan",TSE,2026,Journal Papers,2,,,,,,Pouya_TSE_2025,"Software Evolution, Empirical Software Engineering", Developer Chatroom,
+Towards Refining Developer Questions using LLM-Based Named Entity Recognition for Developer Chatroom Conversations,"Pouya Fathollahzadeh, Mariam EI Mezouar, Hao Li, Ying Zou, Ahmed E. Hassan",TSE,2026,Journal Papers,2,,,,,,TSE_Pouya_2025,"Software Evolution, Empirical Software Engineering", Developer Chatroom,
 Understanding Open Source Contributor Profiles in Popular Machine Learning Libraries,"Jiawen Liu,Haoxiang Zhang, Ying Zou",TOSEM,2025,Journal Papers,6,,,,,,TOSEM_Jiawen_2025,"Open Source, Developers",Contributor Profiles  ,
 LLM-Cure: LLM-based Competitor User Review Analysis for Feature Enhancement,"Maram Assi, Safwat Hassan, Ying Zou",TOSEM,2025,Journal Papers,6,,,,,,TOSEM-Maram-2025,Refactoring,Code Clone,
 An Empirical Study on Collaborative Uses of Communication Channels for Software Development and Management,"Mariam EI Mezouar, Daniel Alencar Da Costa, Ying Zou",CASCON,2024,Refereed Conference and Workshop Publications,2,,,,,,CASCON-Mariam-2025,Communication Channels,Social Software Engineering,
@@ -236,6 +236,7 @@ Building an Intelligent System for Predicting and Fixing Performance Defects, Gu
 Machine Learning Driven Guidance for Software Maintenance: Enhancing Code Management and Features, Maram Assi,Others,2024,Theses,9,,232 pp.,,,Ph.D. Thesis,Maram_Thesis_2024_final,"Software Engineering , Software maintenance",software engineering ,
 Empirical Studies on Code Refactoring Practices in Software Development Process, Shayan Noei,Others,2024,Theses,10,,194 pp.,,,Ph.D. Thesis,Shayan_Noei_N_202410,"Code Refactoring , Code Quality",Code Refactoring  ,
 Understanding Open-Source Contributor Profiles in Popular Machine Learning Libraries, Jiawen Liu,Others,2025,Theses,1,,155 pp.,,,Master's Thesis,Jiawen_Liu_Thesis,"Open Source, Developers",Contributor Profiles  ,
+
 
 
 
